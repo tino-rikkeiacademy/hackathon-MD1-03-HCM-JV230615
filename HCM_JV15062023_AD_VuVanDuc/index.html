@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <section class="container">
+        <div class="table">
+            <div class="header ">
+                <div class="header-left">
+                    <div class="header-left-wrapper">
+                        <div class="left-pane">
+                            <div class="row">
+                                <span class="row-flex">Player:</span>
+                                <span id="total">0</span>
+                            </div>
+                            <div class="row">
+                                <span class="row-flex">Total Points:</span>
+                                <span id="totalPoint">0</span>
+                            </div>
+                        </div>
+                        <div class="heading">
+                            <h2>Rikkei Scoreboard</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <p class="title">Stopwatch</p>
+                    <span class="timer" id="time">0</span>
+                    <div class="btn-wrapper">
+                        <input class="btn " type="submit" name="" id="" value="START" onclick="start()">
+                        <input class="btn " type="submit" name="" id="" value="RESET" onclick="reset()">
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <table id="table">
+                    <!-- <tbody>
+                        <tr>
+                            <td>
+                                <span class="icon-wrapper">
+                                    <i class="fa-solid fa-xmark icon icon-remove" onclick="deletePerson(id)"></i>
+                                    <i class="fa-solid fa-crown icon icon-crown"></i>
+                                </span>
+                                <label for="">
+                                    Minh Cường
+                                </label>
+                            </td>
+                            <td class="calculation-col">
+                                <div class="calculation">   
+                                    <span class="sign" onclick="minus()">-</span>
+                                    <span >0</span>
+                                    <span class="sign" onclick="plus()">+</span>
+                                </div>
+                               
+                            </td>
+                        </tr>
+                    </tbody> -->
+                </table>
+            </div>
+            <div class="footer ">
+                <div class="footer-wrapper">
+                    <input id="name" class="inpt-name" type="text" placeholder="Enter a player's name">
+                    <input class="submit" type="submit" name="" id="" value="ADD PLAYER" onclick="addPerson()">
+                </div>    
+            </div>
+        </div>
+    </section>
+
+    <script src="./main.js"></script>
+</body>
+</html>
