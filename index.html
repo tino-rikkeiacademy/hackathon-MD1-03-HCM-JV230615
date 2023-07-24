@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- title -->
+        <title>ScroreBoard</title>
+
+        <!-- font awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- reset css -->
+        <link rel="stylesheet" href="./reset.css" />
+        <!-- style css -->
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- header -->
+            <div class="header">
+                <!-- left -->
+                <div class="header__left">
+                    <div style="display: flex">
+                        <p id="players" style="width: 120px">Players:</p>
+                        <span id="countPlayer">0</span>
+                    </div>
+                    <div style="display: flex">
+                        <p style="width: 120px">Total Points:</p>
+                        <span id="totalPoints">0</span>
+                    </div>
+                </div>
+
+                <!-- mid -->
+                <div class="header__mid">
+                    <h1 class="heading">Rikkei Score Board</h1>
+                </div>
+
+                <!-- right -->
+                <div class="header__right">
+                    <h2 class="header__title">Stopwatch</h2>
+                    <span id="countTime">60</span>
+                    <div class="btn-row">
+                        <buttn class="btn" onclick="start()">Start</buttn>
+                        <buttn class="btn" onclick="reset()">Reset</buttn>
+                    </div>
+                </div>
+            </div>
+            <!-- end footer -->
+
+            <!-- content -->
+            <div id="content">
+                <hr />
+            </div>
+            <!-- footer -->
+            <div class="footer">
+                <input
+                    type="text"
+                    name="inputStr"
+                    id="inputStr"
+                    placeholder="Enter a player's name"
+                />
+                <button class="btn" onclick="addPlayer()">ADD PLAYER</button>
+            </div>
+        </div>
+        <!-- script -->
+        <script src="./app.js"></script>
+    </body>
+</html>
