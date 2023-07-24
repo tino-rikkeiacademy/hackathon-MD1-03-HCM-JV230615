@@ -1,0 +1,87 @@
+
+/* Warning */
+.showWarning {
+    position: absolute;
+    /* top: 50px; */
+    left: 50%;
+
+    transform: translateX(-50%);
+    animation: fadeInWarning 0.5s, fadeOutWarning 0.5s 2.5s;
+
+    width: 500px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #e68f1e;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    line-height: 60px;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes fadeInWarning {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 50px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutWarning {
+    from {
+        top: 50px;
+        opacity: 1;
+    }
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+
+
+/* Success */
+.showSuccess {
+    position: absolute;
+    left: 50px;
+
+    animation: fadeInSuccess 0.5s, fadeOutSuccess 0.5s 2.5s;
+
+    width: 500px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #04AA6D;
+    color: #fff;
+    font-size: 1.7rem;
+    text-align: center;
+    line-height: 60px;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes fadeInSuccess {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 50px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutSuccess {
+    from {
+        bottom: 50px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}

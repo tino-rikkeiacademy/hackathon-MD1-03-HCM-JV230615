@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tag -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta Tag -->
+    <title>Document</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/snackbar.css">
+
+    <!-- Link Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+ 
+</style>
+
+<body>
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+
+        <!-- Hearder -->
+        <div class="header">
+            <div class="header__left">
+                <p>Players: <span id="playerQuantity">0</span></p>
+                <p>Total Points: <span id="totalPoints">0</span></p>
+            </div>
+            <div class="header__midle">
+                Rikkei Scoreboard
+            </div>
+            <div class="header__right">
+                <div class="header__right--title">Stopwatch</div>
+                <div class="header__time" id="time">60</div>
+                <div class="btn">
+                    <button id="start" onclick="start()">START</button>
+                    <button onclick="resetTime()">RESET</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main -->
+        <div class="main">
+            <div class="container" id="display">
+    
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <input placeholder="Enter a player's name" type="text" id="name" required>
+            <button onclick="addPlayer()">ADD PLAYER</button>
+        </div>
+    </div>
+   
+    <script src="./js/index.js"></script>
+    <script src="./js/snackbar.js"></script>
+</body>
+
+</html>
