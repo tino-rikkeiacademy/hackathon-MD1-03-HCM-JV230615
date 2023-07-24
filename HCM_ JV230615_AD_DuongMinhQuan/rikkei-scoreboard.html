@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+.scoreboard{
+    width: 600px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    color: #ffffff;
+}
+.scoreboard__rows-third{
+    text-align: center;
+    background-color: #b20000;
+}
+.scoreboard__rows-third__text{
+    width: 450px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #890300;
+   border: none;
+   
+   
+}
+.scoreboard__rows-first{
+    background-color: #b20000;
+}
+.scoreboard__rows-first__column-third{
+     background-color: #9c0100;
+}
+.scoreboard__rows-first__column-first{
+    padding-left: 20px;
+}
+.scoreboard__rows-first__column-second,.scoreboard__rows-first__column-third{
+    text-align: center;
+}
+
+
+    </style>
+</head>
+<body>
+    
+        <table border="1" class="scoreboard">
+            <tr class="scoreboard__rows-first">
+                <td class="scoreboard__rows-first__column-first">Players : <p id="number"></p>
+                    Total Points : <p id="number1"></p>
+                </td >
+                <td class="scoreboard__rows-first__column-second"> Rikkei Scoreboard</td>
+                <td class="scoreboard__rows-first__column-third">Stopwatch
+                    <p id="time"></p>
+                    <button onclick="startCountdown()">START</button>
+                    <button onclick="resetCountdown()">RESET</button>
+                </td> 
+            </tr>
+            <tr id="text" style="color: black;" class="text" >
+           
+               
+
+            </tr>
+            <tr class="scoreboard__rows-third">
+                <td colspan="3"><input type="text" placeholder="Enter a player's name" class="scoreboard__rows-third__text" id="name">
+                <button onclick="addPlayer()">ADD PLAYER</button>
+                </td>
+            </tr>
+        </table>
+    <script>
+function createId() {
+      return Math.floor(Math.random() * 9999999999999) + new Date().getMilliseconds();
+}
+
+ let player = JSON.parse(localStorage.getItem("player")) || [];
+function addPlayer() {
+      
+ let userName= document.getElementById("name").value;
+  let playerInfor={
+       name: userName,
+       userId: createId(),
+       score: 0,
+    }
+       player.push(playerInfor);
+    
+    localStorage.setItem("player",JSON.stringify(player));
+    
+    renderPlayer(player)
+}
+/*  function renderPlayer() {
+            let element = "";
+            
+            for (let i = 0; i <player.length; i++) {
+
+                element +=
+                    `   
+                     <tr colspan="3" >
+                        
+                            <button onclick="deleteUser(${player[i].userId})">x</button> ${player[i].name} 
+                              <span class="material-symbols-outlined" onclick="down('${player[i].userId}')">remove</span>
+                            <span>${player[i].score}</span>
+                        <span class="material-symbols-outlined" onclick="up('${player[i].userId}')">add</span>  
+                    </tr> <br>
+                `
+            }
+            document.getElementById("text").innerHTML = element;
+        }
+        renderPlayer(player); */
+
+        
+        function renderPlayer() {
+                let element = "";
+                let sum = 0;
+                for (let i = 0; i < player.length; i++) {
+                    element += `   
+                     <tr colspan="3">
+                        
+                            <button onclick="deleteUser(${player[i].userId})">x</button> ${player[i].name} 
+                            <span class="material-symbols-outlined" onclick="down('${player[i].userId}')">remove</span>
+                            <span>${player[i].score}</span>
+                        <span class="material-symbols-outlined" onclick="up('${player[i].userId}')">add</span>
+                    </tr> <br>
+                `;
+                    sum += player[i].score;
+                }
+                document.getElementById("text").innerHTML = element;
+                document.getElementById("number1").innerHTML = sum;
+            }
+            renderPlayer(player);
+
+         
+        
+        
+        
+        
+        
+        
+        function deleteUser(id) {
+        
+            for (let i = 0; i < player.length; i++) {
+                if (player[i].userId == id) {
+                    player.splice(i, 1);
+                    localStorage.setItem("player", JSON.stringify(player));
+                    renderPlayer(player);
+                }
+            }
+
+        }
+        
+
+    
+
+
+        function up(id) {
+                for (let i = 0; i < player.length; i++) {
+                    if (player[i].userId == id) {
+                        player[i].score++;
+                    }
+                }
+                localStorage.setItem("player", JSON.stringify(player));
+                renderPlayer();
+            }
+
+            function down(id) {
+                for (let i = 0; i < player.length; i++) {
+                    if (player[i].userId == id) {
+                        {
+                            if (player[i].score <=0) {
+                                return;
+                            }
+                        }
+                        player[i].score--;
+                    }
+                }
+                localStorage.setItem("player", JSON.stringify(player));
+                renderPlayer();
+            }
+
+
+
+
+        
+
+
+function startCountdown() {
+  var seconds = 60;
+  function tick() {
+    var counter = document.getElementById("time");
+    seconds--;
+    counter.innerHTML = (seconds < 10 ? "0" : "") + String(seconds) + " giây";
+ if( seconds > 0 ) {
+      setTimeout(tick, 1000);
+    } else {
+      alert("Hết giờ!");
+    }
+  }
+  tick();
+}
+
+
+
+var countTimeout;
+function resetCountdown() {
+  clearTimeout(countTimeout);
+  var counter = document.getElementById("time");
+  counter.innerHTML = "60 giây";
+  seconds = 60;
+}
+
+
+
+
+var total = 0;
+for (var i = 0; i < player.length; i++) {
+    total += 1;
+}
+document.getElementById("number").innerHTML=total;
+
+
+
+
+
+
+    </script>
+</body>
+</html>
