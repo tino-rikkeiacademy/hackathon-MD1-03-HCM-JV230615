@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 70px;
+    outline: 10px solid #edebed;
+}
+
+.container-top{
+    display: flex;
+    justify-content: space-between;
+    background-color: #b20000;
+    color: #fff;
+}
+
+.container-top h2{
+    display: flex;
+    align-items: center;
+}
+
+.container-top .box-left{
+    margin: 15px 20px;
+}
+
+.container-top .box-left p{
+    display: inline;
+}
+
+.container-top .box-left #players{
+    margin-bottom: 5px;
+}
+
+.container-top .box-right{
+    display: inline;
+    background-color: #9c0100;
+    width: 150px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.container-top .box-right #stopWatch{
+    text-align: center;
+}
+
+.container-top .box-right p{
+    text-align: center;
+}
+
+.container-top .box-right button{
+    text-align: center;
+    margin: 2px;
+    background-color: #fff;
+    border: none;
+    padding: 2px;
+    font-weight: 600;
+    border-radius: 2px;
+}
+
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.content #content-left{
+    width: 450px;
+    display: flex;
+    padding: 5px 10px;
+}
+
+.content #content-left button{
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.content #content-right{
+    width: 150px;
+    display: flex;
+    justify-content: space-between;  
+    align-items: center; 
+}
+
+.content #content-right button{
+    width: 30px;
+    height: 30px;
+    
+}
+
+
+
+
+.container-bottom{
+    height: 45px;
+    padding: 10px 15px 10px 7px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #b20000;
+    color: #fff;
+    /* padding: 10px 20px; */
+}
+
+.container-bottom input{
+    width: 420px;
+    padding: 10px 3px;
+    background-color: #890300;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.container-bottom input::placeholder{
+    color: #fff;
+}
+
+.container-bottom button{
+    background-color: #fff;
+    border: none;
+    margin-left: 16px;
+    padding: 7px;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+}

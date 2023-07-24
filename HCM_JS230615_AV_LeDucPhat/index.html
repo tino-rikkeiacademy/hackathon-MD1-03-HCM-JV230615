@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container-top">
+            <div class="box-left">
+                <div >
+                    Players:
+                    <p id="quantityPlayers">0</p>
+                </div>
+                <div >
+                    Total Points:
+                    <p id="totalPoints">0</p>
+                </div>
+            </div>
+
+            <h2>Rikkei Scoreboard</h2>
+
+            <div class="box-right">
+                <div id="stopWatch">Stopwatch
+                    <p id="time">60</p>
+                </div>
+                <div>
+                    <button type="button" onclick="start()">START</button>
+                    <button type="button" onclick="reset()">RESET</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="container-middle" class="container-middle">
+           
+           <hr><br>
+                        
+        </div>
+        <div class="container-bottom">
+            <input type="text" id="inputName" placeholder="Enter a player's name">
+            <button type="button" onclick="add()">ADD PLAYER</button>
+        </div>
+    </div>
+
+
+    <!--  -->
+    <script src="./js/app.js"></script>
+</body>
+</html>
